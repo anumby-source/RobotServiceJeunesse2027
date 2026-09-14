@@ -1,3 +1,7 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+
 os.chdir('chemin vers le repertoire qui contient les images')
 
 fd = open('img_xxxx.dat', 'rb') # xxxx = numéro de l'image à afficher
