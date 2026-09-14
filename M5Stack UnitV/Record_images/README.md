@@ -7,7 +7,7 @@ Sur l'ESP32-S2 du robot, charger le script _record_images.py_ et le lancer au d�
 
 Sur l'ESP32-S2 de la télécommande, charger le script _record_images.py_ et le lancer au démarrage ( "import record_images" dans _boot.py_)
 
-[!WARNING]
+> ⚠️ **Attention !** 
 Ne pas oublier d'indiquer le numéro du couple robot/telecommande dans les deux scripts _record_images.py_ (au début du script)
 
 Le robot est piloté normalement avec la télécommande. Le déclenchement de la capture de l'image se fait avec le clic supérieur de la télécommande.
