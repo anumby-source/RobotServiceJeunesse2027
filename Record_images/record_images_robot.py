@@ -12,7 +12,7 @@ from dcMotor import dcMotor
 from mac_addr import telecommande_mac
 
 #
-num = 
+num =   # numéro du couple robot/telecommande
 telecommandeAddr = telecommande_mac[num]
 
 # motors initialization
