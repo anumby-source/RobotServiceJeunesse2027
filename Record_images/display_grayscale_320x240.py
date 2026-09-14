@@ -1,11 +1,10 @@
-os.chdir('/Users/Gilles/Dropbox/Informatique/Anumby/RSJ2026/M5Stack UnitV')
+os.chdir('chemin vers le repertoire qui contient les images')
 
-fd = open('img_0019.dat', 'rb')
+fd = open('img_xxxx.dat', 'rb') # xxxx = numéro de l'image à afficher
 b = fd.read()
 fd.close()
 
 img=np.empty((320,240), dtype=np.uint8)
-
 
 for n in range(len(b)):
     img[n%320,n//320]=b[n]
