@@ -3,6 +3,7 @@
 Mettre une carte SD dans le M5Stack UnitV.
 
 Copier _boot.py_ et _record_images.py_ sur la carte.
+
 Sur l'ESP32-S2 du robot, charger le script _record_images.py_ et le lancer au démarrage ( "import record_images" dans _boot.py_).
 
 Sur l'ESP32-S2 de la télécommande, charger le script _record_images.py_ et le lancer au démarrage ( "import record_images" dans _boot.py_)
