@@ -1,12 +1,20 @@
-#  Enregistrement des images pour l'apprentissage du modèle sur le K210
+##  Enregistrement des images pour l'apprentissage du modèle sur le K210
 
 Mettre une carte SD dans le M5Stack UnitV.
+
 Copier _boot.py_ et _record_images.py_ sur la carte.
-Sur l'ESP32-S2 du robot, charger le script _record_images.py_ et le lancer au démarrage ( "import record_images" dans _boot.py_)
+Sur l'ESP32-S2 du robot, charger le script _record_images.py_ et le lancer au démarrage ( "import record_images" dans _boot.py_).
+
 Sur l'ESP32-S2 de la télécommande, charger le script _record_images.py_ et le lancer au démarrage ( "import record_images" dans _boot.py_)
+
 Attention ! ne pas oublier d'indiquer le numéro du couple robot/telecommande dans les deux scripts _record_images.py_ (au début du script)
+
 Le robot est piloté normalement avec la télécommande. Le déclenchement de la capture de l'image se fait avec le clic supérieur de la télécommande.
+
 L'image est enregistrée sur la carte SD, le nom du fichier est affiché sur l'écran de la télécommande.
+
 L'image est capturée en niveau de gris (8 bits), sa résolution est 320x240.
+
 Le format du nom de fichier est _img_xxxx.dat_ , où _xxxx_ est le numéro de l'image, incrémenté après chaque capture.
+
 Si des fichiers image sont déjà présents sur la carte au moment du démarrage, le numéro est incrémenté à partir de celui la dernière image déja présente.
