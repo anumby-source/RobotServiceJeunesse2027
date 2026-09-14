@@ -2,7 +2,9 @@
 
 Mettre une carte SD dans le M5Stack UnitV.
 
-Copier _boot.py_ et _record_images.py_ sur la carte.
+Copier _boot.py_ et _record_images.py_ sur une carte micro-SD.
+
+Insérer la carte SD dans le M5Stack UnitV.
 
 Sur l'ESP32-S2 du robot, charger le script _record_images_robot.py_ et le lancer au démarrage ( "import record_images_robot" dans le fichier _boot.py_ du robot).
 
