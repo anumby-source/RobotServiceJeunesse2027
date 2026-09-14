@@ -21,4 +21,4 @@ Le format du nom de fichier est _img_xxxx.dat_ , où _xxxx_ est le numéro de l'
 
 Si des fichiers image sont déjà présents sur la carte au moment du démarrage, le numéro est incrémenté à partir de celui la dernière image déja présente afin de ne pas effacer les images déjà présentes.
 
-_display_grayscale_320x240.py_ : script python qui affiche une image _img_xxxx.dat_ sur PC/MAC (utilise la librairie _matplotlib_)
+_display_grayscale_320x240.py_ : script python qui affiche une image _img_xxxx.dat_ sur PC/MAC (utilise les librairies _matplotlib_ et _numpy_)
