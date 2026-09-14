@@ -8,7 +8,7 @@ import st7789
 import tft_config
 import vga2_bold_16x32 as font
 #
-num = 4
+num =  # numéro du couple robot/telecommande
 robotAddr = robot_mac[num]
 
 #
