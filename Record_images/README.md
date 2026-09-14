@@ -2,12 +2,12 @@
 
 Ce répertoire contient les fichiers nécessaires pour faire la capture d'images avec le module M5Stack UnitV monté sur un robot et déclenchée à partir de la télécommande.
 
-- Copier _boot.py_ et _record_images.py_ sur une carte micro-SD et insérer la carte SD dans le M5Stack UnitV
+- Copier _boot.py_ et _record_images.py_ sur une carte micro-SD et insérer la carte dans le M5Stack UnitV
 - Sur l'ESP32-S2 du robot, charger le script _record_images_robot.py_ et le lancer au démarrage ( "import record_images_robot" dans le fichier _boot.py_ du robot)
 - Sur l'ESP32-S2 de la télécommande, charger le script _record_images_telecommande.py_ et le lancer au démarrage ( "import record_images_telecomande" dans le fichier _boot.py_ de la télécommande)
 
 > ⚠️ **Attention !** 
-Ne pas oublier d'indiquer le numéro du couple robot/telecommande dans les deux scripts _record_images.py_ (au début du script)
+Ne pas oublier d'indiquer le numéro du couple robot/telecommande dans les deux scripts précédents (au début du script)
 
 Le robot est piloté normalement avec la télécommande. Le déclenchement de la capture de l'image se fait avec le clic supérieur de la télécommande.
 
