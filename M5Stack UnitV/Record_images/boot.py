@@ -1,2 +1,0 @@
-# 
-import record_images
