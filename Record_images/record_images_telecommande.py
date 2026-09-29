@@ -8,7 +8,7 @@ import st7789
 import tft_config
 import vga2_bold_16x32 as font
 #
-num =  # numéro du couple robot/telecommande
+num = 4
 robotAddr = robot_mac[num]
 
 #
@@ -31,10 +31,11 @@ def constrain(x):
 # init display
 tft = tft_config.config(3, buffer_size=4096)
 tft.init()
+
 # display logo
 png_file_name = '/russhughes/demos/Anumby-240x135.png'
 tft.png(png_file_name, 0, 0)
-sleep_ms(1000)
+tft.fill(0)
 # init ADC
 a0 = ADC(Pin(39, Pin.IN), atten=ADC.ATTN_11DB)
 a1 = ADC(Pin(36, Pin.IN), atten=ADC.ATTN_11DB)
@@ -42,8 +43,10 @@ midadc = 1730         # adc middle
 maxadc = 3150         # adc max
 dzw    = 200          # dead zone width
 szw    = midadc - dzw # sensitive zone width
-samp   = 100
-ramp   = 50
+# samp   = 100
+# ramp   = 50
+samp   = 30
+ramp   = 30
 
 # init push buttons
 p0, s0   = Pin(0, Pin.IN), True
@@ -67,6 +70,7 @@ print("telecommande.py : robot added to peers")
 #
 while True:
     try:
+#         r, s = a0.read_uv()/1000, a1.read_uv()/1000
         r, s = a0.read_uv()/1000, a1.read_uv()/1000
         r = normalize(r, ramp)     # r in [-ramp,+ramp]
         s = normalize(s, samp)     # s in [-samp,+samp]
@@ -74,17 +78,28 @@ while True:
         cmd = 'ml.set_speed(' + str(ls) + ')\r'
         cmd += 'mr.set_speed(' + str(rs) + ')\r'
         e.send(robotAddr, cmd.encode(), False)
-#         print(cmd.encode())
+        print(cmd.encode())
         if s0 and (not p0.value()):
             s0 = False
             e.send(robotAddr, 'u.write("record")'.encode(), False)
             print('u.write("record")'.encode())
         elif (not s0) and p0.value():
             s0 = True
+        if s35 and (not p35.value()):
+            s35 = False
+            e.send(robotAddr, 'u.write("change")'.encode(), False)
+            print('u.write("record")'.encode())
+        elif (not s35) and p35.value():
+            s35 = True
         addr, ans = e.recv(0)
         if ans and (addr == robotAddr):
-            tft.fill(0)
-            tft.text(font, ans, 0, 0)
+            if b'Class' in ans:
+                line = 0
+            else:
+                line = 32
+            tft.text(font, '            ', 0, line)   # erase line
+            tft.text(font, ans.strip(), 0, line)      # remove b'\n'
+                
             print(ans)
         sleep_ms(100)
     except:
