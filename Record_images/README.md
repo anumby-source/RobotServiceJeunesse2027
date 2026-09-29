@@ -13,9 +13,9 @@ Ne pas oublier d'indiquer le numéro du couple robot/telecommande dans les deux 
 
 Utilisation de la télécommande :
 
-- le robot est piloté normalement avec le joystick. La vitesse réduite pour pouvoir le positionner plus précisement,
-- le bouton inférieur (a côté de la prise USB) permet de sélectionner le numéro du panneau (de 1 à 10),
-- le déclenchement de la capture d'image se fait avec le bouton supérieur de la télécommande.
+- le robot est piloté normalement avec le joystick. La vitesse est réduite pour pouvoir le positionner plus précisément,
+- le bouton inférieur (à côté de la prise USB) permet de sélectionner le numéro du panneau (de 1 à 10),
+- la capture d'image se fait avec le bouton supérieur de la télécommande.
 
 Les images sont enregistrées sur la carte SD, en couleur (résolution 320x240), au format jpg.
 
