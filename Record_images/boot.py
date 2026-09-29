@@ -1,2 +1,2 @@
 # 
-import record_images
+import record_images_RGB565
