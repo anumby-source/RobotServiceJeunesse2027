@@ -14,9 +14,9 @@ Ne pas oublier d'indiquer le numéro du couple robot/telecommande dans les deux 
 Utilisation de la télécommande :
 
 - le robot est piloté normalement avec le joystick. La vitesse est réduite pour pouvoir le positionner plus précisément,
-- le bouton inférieur (à côté de la prise USB) permet de sélectionner le numéro du panneau (de 1 à 10),
+- le bouton inférieur (à côté de la prise USB) permet de sélectionner le numéro du panneau ("Class" de 1 à 10),
 - la capture d'image se fait avec le bouton supérieur de la télécommande.
 
-Les images sont enregistrées sur la carte SD, en couleur (résolution 320x240), au format jpg.
+Les images sont enregistrées sur la carte SD, en couleur (résolution 224x224), au format jpg, dans le répertoire "images".
 
-L'écran de la télécommande affiche le numéro du panneau ("Class n") et le nom du fichier de la dernière image enregistrée ("/sd/train/n/m")
+L'écran de la télécommande affiche le numéro du panneau ("Class p") et le nom du fichier de la dernière image enregistrée ("/sd/image/p/n")
