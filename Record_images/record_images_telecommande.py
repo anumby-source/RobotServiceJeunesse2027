@@ -7,13 +7,11 @@ import os
 import st7789
 import tft_config
 import vga2_bold_16x32 as font
+from gc import collect
+
 #
 num = 4
 robotAddr = robot_mac[num]
-
-#
-# red, green, blue, white, black = (0, 128, 0), (128, 0, 0), (0, 0, 128), (32, 32, 32), (0, 0, 0)
-
 #
 def normalize(x, amp=100):
     ''' resize x -> [-amp;+amp] '''
@@ -36,6 +34,13 @@ tft.init()
 png_file_name = '/russhughes/demos/Anumby-240x135.png'
 tft.png(png_file_name, 0, 0)
 tft.fill(0)
+# display battery voltage
+att = ADC.ATTN_11DB
+v = ADC(Pin(34, Pin.IN), atten=att)
+s = 'bat : {:4.2f}V'.format(2.02*v.read_uv()/1e6)
+tft.text(font, s, 10, 10, st7789.WHITE)
+sleep_ms(1000)
+tft.fill(0)
 # init ADC
 a0 = ADC(Pin(39, Pin.IN), atten=ADC.ATTN_11DB)
 a1 = ADC(Pin(36, Pin.IN), atten=ADC.ATTN_11DB)
@@ -45,8 +50,8 @@ dzw    = 200          # dead zone width
 szw    = midadc - dzw # sensitive zone width
 # samp   = 100
 # ramp   = 50
-samp   = 30
-ramp   = 30
+samp   = 35
+ramp   = 35
 
 # init push buttons
 p0, s0   = Pin(0, Pin.IN), True
@@ -70,7 +75,6 @@ print("telecommande.py : robot added to peers")
 #
 while True:
     try:
-#         r, s = a0.read_uv()/1000, a1.read_uv()/1000
         r, s = a0.read_uv()/1000, a1.read_uv()/1000
         r = normalize(r, ramp)     # r in [-ramp,+ramp]
         s = normalize(s, samp)     # s in [-samp,+samp]
@@ -88,23 +92,21 @@ while True:
         if s35 and (not p35.value()):
             s35 = False
             e.send(robotAddr, 'u.write("change")'.encode(), False)
-            print('u.write("record")'.encode())
+            print('u.write("change")'.encode())
         elif (not s35) and p35.value():
             s35 = True
         addr, ans = e.recv(0)
+        
         if ans and (addr == robotAddr):
-            if b'Class' in ans:
-                line = 0
-            else:
-                line = 32
-            tft.text(font, '            ', 0, line)   # erase line
-            tft.text(font, ans.strip(), 0, line)      # remove b'\n'
-                
             print(ans)
+            if (b'Class' in ans) or (b'/sd' in ans):
+                line = 0 if (b'Class' in ans) else 32
+                tft.text(font, '               ', 0, line)   # erase line
+                tft.text(font, ans.strip(), 0, line)         # remove b'\n'
+            
         sleep_ms(100)
     except:
-#         np[0] = red
-#         np.write()
         break
+
 tft.fill(0)
-del tft
+# del tft

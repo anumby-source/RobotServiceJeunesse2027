@@ -54,17 +54,12 @@ if "sd" not in os.listdir("/"):
     print("Error: Cannot read SD Card")
 
 try:
-    os.mkdir("/sd/train")
+    os.mkdir("/sd/images")
 except Exception as e:
     pass
 
 try:
-    os.mkdir("/sd/valid")
-except Exception as e:
-    pass
-
-try:
-    currentImage = max(findMaxIDinDir("/sd/train/" + str(currentDirectory)), findMaxIDinDir("/sd/valid/" + str(currentDirectory))) + 1
+    currentImage = findMaxIDinDir("/sd/images/" + str(currentDirectory)) + 1
 except:
     currentImage = 0
     pass
@@ -79,39 +74,27 @@ try:
             img = sensor.snapshot()
             led.set_led(0, r)
             led.display()
-            if currentImage <= 30 or currentImage > 35:
-                try:
-                    if str(currentDirectory) not in os.listdir("/sd/train"):
-                        try:
-                            os.mkdir("/sd/train/" + str(currentDirectory))
-                        except:
-                            pass
-                    photo = img.save("/sd/train/" + str(currentDirectory) + "/" + str(currentImage) + ".jpg", quality=95)
-                    u.write("/sd/train/" + str(currentDirectory) + "/" + str(currentImage) + "\n")
-                except:
-                    u.write("Write Error\n")
-                    sleep(1)
-            else:
-                try:
-                    if str(currentDirectory) not in os.listdir("/sd/valid"):
-                        try:
-                            os.mkdir("/sd/valid/" + str(currentDirectory))
-                        except:
-                            pass
-                    photo = img.save("/sd/valid/" + str(currentDirectory) + "/" + str(currentImage) + ".jpg", quality=95)
-                    u.write("/sd/valid/" + str(currentDirectory) + "/" + str(currentImage) + "\n")
-                except:
-                    u.write("Write Error\n")
-                    sleep(1)
+            try:
+                if str(currentDirectory) not in os.listdir("/sd/images"):
+                    try:
+                        os.mkdir("/sd/images/" + str(currentDirectory))
+                    except:
+                        pass
+                photo = img.save("/sd/images/" + str(currentDirectory) + "/" + str(currentImage) + ".jpg", quality=95)
+                u.write("/sd/images/" + str(currentDirectory) + "/" + str(currentImage) + "\n")
+            except:
+                u.write("Write Error\n")
+                sleep(1)
+
             currentImage = currentImage + 1
 
         elif cmd == b'change':
-            led.set_led(0, r)
+            led.set_led(0, b)
             led.display()
             currentDirectory = currentDirectory + 1
             if currentDirectory == 11:
                 currentDirectory = 1
-            currentImage = max(findMaxIDinDir("/sd/train/" + str(currentDirectory)), findMaxIDinDir("/sd/valid/" + str(currentDirectory))) + 1
+            currentImage = findMaxIDinDir("/sd/images/" + str(currentDirectory)) + 1
             u.write("Class " + str(currentDirectory) + "\n")
 
 except KeyboardInterrupt:
