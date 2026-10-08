@@ -17,3 +17,10 @@ Alummer le robot et la télécommande.
 Le click bas de la télécommande permet de réduire la vitesse de déplacement du robot (appui maintenu).
 
 Le click haut lance l'identification. Si le panneau est reconnu (probabilité > 0.7), son image s'affiche sur l'écran de la télécommande.
+
+
+<img width="1875" height="1887" alt="1066" src="https://github.com/user-attachments/assets/3e4400ba-0645-499c-935c-58f4b007da76" />
+
+<img width="1875" height="1842" alt="1067" src="https://github.com/user-attachments/assets/c44355aa-4d89-4495-950b-6988af42be73" />
+
+<img width="1875" height="1782" alt="1068" src="https://github.com/user-attachments/assets/2e832ab8-67ff-4620-969c-d2e2515a0ed0" />
