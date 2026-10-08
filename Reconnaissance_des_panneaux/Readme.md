@@ -19,7 +19,7 @@ Le click bas de la télécommande permet de réduire la vitesse de déplacement 
 Le click haut lance l'identification. Si le panneau est reconnu (probabilité > 0.7), son image s'affiche sur l'écran de la télécommande.
 
 
-<img width="1875" height="1887" alt="1066" src="https://github.com/user-attachments/assets/3e4400ba-0645-499c-935c-58f4b007da76" />
+<img width="600" height="600" alt="1066" src="https://github.com/user-attachments/assets/3e4400ba-0645-499c-935c-58f4b007da76" />
 
 <img width="1875" height="1842" alt="1067" src="https://github.com/user-attachments/assets/c44355aa-4d89-4495-950b-6988af42be73" />
 
