@@ -35,15 +35,14 @@ def findMaxIDinDir(dirname):
 def initialize_camera():
     while 1:
         try:
-            sensor.reset() #Reset sensor may failed, let's try some times
+            sensor.reset() # Reset sensor may failed, let's try some times
             break
         except:
             sleep(0.1)
             continue
-#     sensor.set_hmirror(1)
-#     sensor.set_vflip(1)
     sensor.set_pixformat(sensor.RGB565)
-    sensor.set_framesize(sensor.QVGA) #QVGA=320x240
+    sensor.set_framesize(sensor.QVGA)      #QVGA=320x240
+    sensor.set_windowing((224, 224))
     sensor.run(1)
 
 initialize_camera()
