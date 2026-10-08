@@ -21,25 +21,25 @@ Les images sont enregistrées sur la carte SD, en couleur (résolution 224x224),
 
 📦 sd/
 
- ├📁 images/
+    ├📁 images/
  
-    ├📁 1/              (panneau 1)
+       ├📁 1/              (panneau 1)
     
-         ├1.jpg
+            ├1.jpg
          
-         ├2.jpg
+            ├2.jpg
          
-         ...
+            ...
          
-    ├📁 2/              (panneau 2)
+       ├📁 2/              (panneau 2)
     
-         ├1.jpg
+            ├1.jpg
          
-         ├2.jpg
+            ├2.jpg
          
-         ...
+            ...
          
-    ...
+       ...
  
 
 L'écran de la télécommande affiche le numéro du panneau ("Class p") et le nom du fichier de la dernière image enregistrée ("/sd/image/p/n")
