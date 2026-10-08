@@ -3,6 +3,7 @@
 Une fois le modèle entrainé sur Maixhub :
 
 - retirer la carte SD du UnitV avant de le brancher sur un port USB et lancer _Kflash_gui_.
+
   Charger le modèle (fichier _model-322136.kmodel_) à l'adresse 0X300000.
 - lancer Maixpy IDE, connecter le UnitV et charger le fichier _boot.py_ ci dessus.
 - dans l'ESP32-S2 du robot, charger _robot.py_ et le lancer au démarrage ("import robot" dans _boot.py_)
