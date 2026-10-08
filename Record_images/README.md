@@ -20,15 +20,25 @@ Utilisation de la télécommande :
 Les images sont enregistrées sur la carte SD, en couleur (résolution 224x224), au format jpg, dans le répertoire "images":
 
 📦 sd/
+
  ├📁 images/
+ 
     ├📁 1/              (panneau 1)
+    
          ├1.jpg
+         
          ├2.jpg
+         
          ...
+         
     ├📁 2/              (panneau 2)
+    
          ├1.jpg
+         
          ├2.jpg
+         
          ...
+         
     ...
  
 
