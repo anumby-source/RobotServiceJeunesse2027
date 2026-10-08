@@ -17,6 +17,6 @@ Utilisation de la télécommande :
 - le bouton inférieur (à côté de la prise USB) permet de sélectionner le numéro du panneau (de 1 à 10),
 - la capture d'image se fait avec le bouton supérieur de la télécommande.
 
-Les images sont enregistrées sur la carte SD, en couleur (résolution 320x240), au format jpg.
+Les images sont enregistrées sur la carte SD, en couleur (résolution 320x240), au format png.
 
-L'écral de la télécommande affiche le numéro du panneau ("Class n") et le nom du fichier de la dernière image enregistrée ("/sd/train/n/m")
+L'écran de la télécommande affiche le numéro du panneau ("Class n") et le nom du fichier de la dernière image enregistrée ("/sd/train/n/m")
