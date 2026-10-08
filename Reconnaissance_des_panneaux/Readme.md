@@ -24,3 +24,5 @@ Le click haut lance l'identification. Si le panneau est reconnu (probabilité > 
 <img width="500" height="500" alt="1067" src="https://github.com/user-attachments/assets/c44355aa-4d89-4495-950b-6988af42be73" />
 
 <img width="500" height="500" alt="1068" src="https://github.com/user-attachments/assets/2e832ab8-67ff-4620-969c-d2e2515a0ed0" />
+
+<img width="500" height="500" alt="1072" src="https://github.com/user-attachments/assets/729394c2-cbb4-43ef-a768-b8d983c00ee3" />
